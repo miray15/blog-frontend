@@ -6,10 +6,12 @@ function Header() {
   )
 }
 
-function Content(){
+function Content() {
   return(
 <div>
   <PostsNew />
+  <PostsIndex />
+  
 </div>
   )
   }
@@ -36,19 +38,11 @@ function Content(){
       </div>
     )
   }
-  
-function App() {
-  return (
+
+function PostsIndex(){
+  return(
     <div>
-     <Header />
-    
-    
-
-      <div id="posts-index">
-        <h1>All posts</h1>
-      </div>
-
-    <div id="Posts Index">
+      <div id="Posts Index">
       <h1>All Posts</h1>
       <div className="Posts">
         <h2>Where's Waldo</h2>
@@ -65,6 +59,21 @@ function App() {
       </div>
     </div>
 
+    </div>
+  )
+}
+
+
+function App() {
+  return (
+    <div>
+     <Header />
+     <Content /> 
+      <div id="posts-index">
+        <h1>All posts</h1>
+      </div>
+
+    
 
       <footer>
         <p>Copyright 2023</p>
