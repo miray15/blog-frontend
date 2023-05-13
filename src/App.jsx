@@ -63,21 +63,22 @@ function PostsIndex(){
   )
 }
 
+function Footer(){
+  return(
+    <div>
+       <footer>
+        <p>Copyright 2023</p>
+      </footer>
+    </div>
+  )
+}
 
 function App() {
   return (
     <div>
      <Header />
      <Content /> 
-      <div id="posts-index">
-        <h1>All posts</h1>
-      </div>
-
-    
-
-      <footer>
-        <p>Copyright 2023</p>
-      </footer>
+     <Footer />
     </div>
   );
 }
