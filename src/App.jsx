@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function Header() {
   return (
     <header>
@@ -7,10 +9,34 @@ function Header() {
 }
 
 function Content() {
+  const [posts, setPosts] = useState([
+    {
+      id: 1,
+      title: "Raw Eggs",
+      chef: "Peter Jang",
+      image_url: "https://cdn.britannica.com/94/151894-050-F72A5317/Brown-eggs.jpg",
+    },
+    {
+      id: 2,
+      title: "Mud Pie",
+      chef: "Jay Wengrow",
+      image_url:
+        "https://static.onecms.io/wp-content/uploads/sites/9/2017/12/mud-pie-XL-RECIPE2016.jpg",
+    },
+    {
+      id: 3,
+      title: "Pizza!!!!",
+      chef: "Jay Wengrow",
+      image_url:
+        "https://static.onecms.io/wp-content/uploads/sites/9/2021/06/15/mozzarella-pizza-margherita-FT-RECIPE0621.jpg",
+    },
+  ])
+    
+  
   return(
 <div>
   <PostsNew />
-  <PostsIndex />
+  <PostsIndex post={posts} />
   
 </div>
   )
@@ -39,11 +65,20 @@ function Content() {
     )
   }
 
-function PostsIndex(){
+function PostsIndex(props){
   return(
     <div>
       <div id="Posts Index">
-      <h1>All Posts</h1>
+        <h1>All Posts</h1>
+        {/* {props.posts.map(post => (
+          <div key={post.id} className="posts">
+            <h2>{post.title}</h2>
+            <img src={post.description} alt="" />
+            <p>Chef: {post.image}</p>
+            <button>More info</button> */}
+      </div>  
+      {/* ))} */}
+
       <div className="Posts">
         <h2>Where's Waldo</h2>
         <p>A children's book also loved by some adults fascinated with the prospect of finding a strange man in stripes</p>
@@ -59,7 +94,7 @@ function PostsIndex(){
       </div>
     </div>
 
-    </div>
+
   )
 }
 
