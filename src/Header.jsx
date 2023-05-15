@@ -1,5 +1,7 @@
 import { Header, Content, Footer } from "./App";
-
+import './index.css'
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
