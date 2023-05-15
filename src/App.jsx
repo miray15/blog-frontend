@@ -1,6 +1,10 @@
 import { useState } from "react";
+import { App } from "./Header";
+import './index.css'
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-function Header() {
+export function Header() {
   return (
     <header>
     <a href="#">Home</a> | <a href="#posts-index">All posts</a> | <a href="#posts-new">New post</a>
@@ -8,7 +12,7 @@ function Header() {
   )
 }
 
-function Content() {
+export function Content() {
   const [posts, setPosts] = useState([
     {
       id: 1,
@@ -29,8 +33,7 @@ function Content() {
       image: "image3",
     },
   ]);
-
-    
+ 
   
   return(
 <div>
@@ -97,7 +100,7 @@ function PostsIndex(props){
   )
 }
 
-function Footer(){
+export function Footer(){
   return(
     <div>
        <footer>
@@ -105,16 +108,6 @@ function Footer(){
       </footer>
     </div>
   )
-}
-
-function App() {
-  return (
-    <div>
-     <Header />
-     <Content /> 
-     <Footer />
-    </div>
-  );
 }
 
 export default App;
