@@ -2,7 +2,7 @@ import './index.css'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-export function PostsIndex(_props) {
+export function PostsIndex(props) {
   return (
     <div>
       <div id="Posts Index">
@@ -31,8 +31,8 @@ export function PostsIndex(_props) {
       {/* ))} */}
 
       <div className="Posts">
-        <h2>Where's Waldo</h2>
-        <p>A children's book also loved by some adults fascinated with the prospect of finding a strange man in stripes</p>
+        <h2>Where is Waldo</h2>
+        <p>A book for children also loved by some adults fascinated with the prospect of finding a strange man in stripes</p>
         <img src="https://123sonography.com/sites/default/files/article/images/2_Waldo_Illustration.png" alt="Not always great for children as you can see - a woman is naked in the top right corner" />
 
         <h2>Chocolate Candy</h2>
