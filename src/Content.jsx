@@ -2,6 +2,7 @@ import { Signup } from "./Signup";
 import { PostsNew } from "./PostsNew";
 import { PostsIndex } from "./PostsIndex";
 import { useState } from "react";
+import { Login } from "./Login";
 
 export function Content() {
             const [posts, setPosts] = useState([
@@ -28,8 +29,10 @@ export function Content() {
        return (
     <div className="container">
       <Signup />
+      <Login /> 
       <PostsNew />
       <PostsIndex post={posts} />
+      
       <br />
       <br />
 
