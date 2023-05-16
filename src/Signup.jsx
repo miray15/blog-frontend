@@ -40,7 +40,8 @@ export function Signup() {
           Password: <input name="password" type="password" />
         </div>
         <div>
-          Password confirmation: <input name="password_confirmation" type="password" />
+          Password confirmation:{" "}
+          <input name="password_confirmation" type="password" />
         </div>
         <button type="submit">Signup</button>
       </form>

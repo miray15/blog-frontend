@@ -1,45 +1,31 @@
 import { Signup } from "./Signup";
 import { PostsNew } from "./PostsNew";
 import { PostsIndex } from "./PostsIndex";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
+import { axios } from "axios";
 
 export function Content() {
-            const [posts, setPosts] = useState([
-              {
-                id: 1,
-                title: "Hello",
-                body: "body",
-                image: "image1",
-              },
-              {
-                id: 2,
-                title: "hi there",
-                body: "body body",
-                image: "image2",
-              },
-              {
-                id: 3,
-                title: "good day",
-                body: "body body body",
-                image: "image3",
-              },
-            ]);
+  const [posts, setPosts] = useState([]);
 
-       return (
+  const handleIndexPosts = () => {
+    console.log("handleIndexPosts");
+    axios.get("http://localhost:3000/posts.json").then((response) => {
+      console.log(response.data);
+      setPosts(response.data);
+    });
+  };
+
+  useEffect(handleIndexPosts, []);
+
+  return (
     <div className="container">
       <Signup />
-      <Login /> 
+      <Login />
       <LogoutLink />
+      <PostsIndex posts={posts} />
       <PostsNew />
-      <PostsIndex post={posts} />
-      
-      <br />
-      <br />
-
-      </div>
-) }
-
-     
- 
+    </div>
+  );
+}
