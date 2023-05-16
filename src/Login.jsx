@@ -1,22 +1,23 @@
+import axios from "axios";
 import { useState } from "react";
-import { Axios } from "axios";
 
 const jwt = localStorage.getItem("jwt");
 if (jwt) {
-  Axios.defaults.headers.common["Authorization"] = `Bearer ${jwt}`;
+  axios.defaults.headers.common["Authorization"] = `Bearer ${jwt}`;
 }
-export function Login () {
+
+export function Login() {
   const [errors, setErrors] = useState([]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setErrors([]);
     const params = new FormData(event.target);
-    Axios
+    axios
       .post("http://localhost:3000/sessions.json", params)
       .then((response) => {
         console.log(response.data);
-        Axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
+        axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
         localStorage.setItem("jwt", response.data.jwt);
         event.target.reset();
         window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
@@ -46,5 +47,4 @@ export function Login () {
       </form>
     </div>
   );
-
 }

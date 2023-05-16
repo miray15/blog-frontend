@@ -3,6 +3,7 @@ import { PostsNew } from "./PostsNew";
 import { PostsIndex } from "./PostsIndex";
 import { useState } from "react";
 import { Login } from "./Login";
+import { LogoutLink } from "./LogoutLink";
 
 export function Content() {
             const [posts, setPosts] = useState([
@@ -30,6 +31,7 @@ export function Content() {
     <div className="container">
       <Signup />
       <Login /> 
+      <LogoutLink />
       <PostsNew />
       <PostsIndex post={posts} />
       
