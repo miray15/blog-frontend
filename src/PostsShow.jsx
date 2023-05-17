@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export function BlogsShow(props) {
+export function PostsShow(props) {
   const handleSubmit = (event) => {
     // stop normal HTML form behavior
     event.preventDefault();

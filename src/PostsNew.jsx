@@ -1,9 +1,3 @@
-export function BlogsNew(props) {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-
-
 export function PostsNew() {
   const handleSubmit = (event) => {
     event.preventDefault();
