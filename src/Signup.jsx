@@ -15,11 +15,15 @@ export function Signup() {
         </div>
         <div>
 <<<<<<< HEAD
+<<<<<<< HEAD
           Password confirmation:{" "}
           <input name="password_confirmation" type="password" />
 =======
           Password confirmation: <input type="password" />
 >>>>>>> parent of a26e259 (add login, logout, and signup syntax from guide)
+=======
+          Password confirmation: <input name="password_confirmation" type="password" />
+>>>>>>> parent of 679e82b (add map loop, post.map is broken whyyyyy)
         </div>
         <button type="submit">Signup</button>
       </form>
