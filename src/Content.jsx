@@ -4,7 +4,6 @@ import { PostsIndex } from "./PostsIndex";
 import { useState, useEffect } from "react";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
-import { axios } from "axios";
 
 export function Content() {
   const [posts, setPosts] = useState([]);
@@ -24,7 +23,6 @@ export function Content() {
       <Signup />
       <Login />
       <LogoutLink />
-      <PostsIndex posts={posts} />
       <PostsNew />
     </div>
   );
