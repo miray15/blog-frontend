@@ -1,29 +1,47 @@
+import axios from "axios";
+import { useState } from "react";
 
 export function Signup() {
+  const [errors, setErrors] = useState([]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setErrors([]);
+    const params = new FormData(event.target);
+    axios
+      .post("http://localhost:3000/users.json", params)
+      .then((response) => {
+        console.log(response.data);
+        event.target.reset();
+        window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
+      })
+      .catch((error) => {
+        console.log(error.response.data.errors);
+        setErrors(error.response.data.errors);
+      });
+  };
+
   return (
     <div id="signup">
       <h1>Signup</h1>
-      <form>
+      <ul>
+        {errors.map((error) => (
+          <li key={error}>{error}</li>
+        ))}
+      </ul>
+      <form onSubmit={handleSubmit}>
         <div>
-          Name: <input type="text" />
+          Name: <input name="name" type="text" />
         </div>
         <div>
-          Email: <input type="email" />
+          Email: <input name="email" type="email" />
         </div>
         <div>
-          Password: <input type="password" />
+          Password: <input name="password" type="password" />
         </div>
         <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
           Password confirmation:{" "}
           <input name="password_confirmation" type="password" />
-=======
-          Password confirmation: <input type="password" />
->>>>>>> parent of a26e259 (add login, logout, and signup syntax from guide)
-=======
-          Password confirmation: <input name="password_confirmation" type="password" />
->>>>>>> parent of 679e82b (add map loop, post.map is broken whyyyyy)
         </div>
         <button type="submit">Signup</button>
       </form>
