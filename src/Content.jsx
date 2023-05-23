@@ -11,6 +11,13 @@ import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink"; //
 
 export function Content() {
+  const getNews = () => {
+    console.log('getNews')
+    axios.get(https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=).then 
+    (response => {
+      console.log(response.data)
+    })
+  }
   const [posts, setPosts] = useState([]);
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
   const [currentPost, setCurrentPost] = useState({});
